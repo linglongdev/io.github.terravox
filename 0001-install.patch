@@ -1,0 +1,49 @@
+From 8d8065b2dbedd48ba7fef1be082f6e8e1c7aa6e8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 14 Sep 2024 12:29:08 +0800
+Subject: [PATCH] install
+
+---
+ Terravox.desktop | 11 +++++++++++
+ Terravox.pro     |  8 ++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 Terravox.desktop
+
+diff --git a/Terravox.desktop b/Terravox.desktop
+new file mode 100644
+index 0000000..83b04ad
+--- /dev/null
++++ b/Terravox.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=Terravox
++Name=Terravox
++Name[zh_CN]=Terravox
++Icon=cursorEyedropper
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=Terravox
++Version=0.3
+\ No newline at end of file
+diff --git a/Terravox.pro b/Terravox.pro
+index b8a316a..2dd6939 100644
+--- a/Terravox.pro
++++ b/Terravox.pro
+@@ -146,3 +146,11 @@ mac {
+     QMAKE_BUNDLE_DATA += ScriptFiles
+ }
+ # TODO: install example scripts on Windows/Linux
++
++target.path = $$PREFIX/bin
++desktop.files = Terravox.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/apps/
++icons.files = res/cursorEyedropper.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.43.4
+
